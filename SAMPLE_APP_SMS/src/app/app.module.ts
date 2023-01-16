@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ExternalBaseComponent } from './external-base/external-base.component';
 import { InternalBaseComponent } from './internal-base/internal-base.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
