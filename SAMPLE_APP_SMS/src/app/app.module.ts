@@ -5,13 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ExternalBaseComponent } from './external-base/external-base.component';
 import { InternalBaseComponent } from './internal-base/internal-base.component';
+import { RegisterComponent } from './internal-base/register/register.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ExternalBaseComponent,
-    InternalBaseComponent
+    InternalBaseComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

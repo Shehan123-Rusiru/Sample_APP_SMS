@@ -1,2 +1,29 @@
-<p>external-base works!</p>
+<div class="d-flex col-sm-3 mx-auto">
+<div class="card">
+    <h4 class="card-header text-center">Student Management System</h4>
+    <h3 class="card-header">Login</h3>
+    <div class="card-body">
+        <form >
+            <div class="input">
+                <label for="username">Username</label>
+                <input type="text" formControlName="username" class="form-control" required="true"/>
+              
+            </div>
+            <div class="input">
+                <label for="password">Password</label>
+                <input type="password" formControlName="password" class="form-control" required />
+               
+            </div>
+        
+            <div class="btn">
+                <button routerLink="../Home/" class="btn btn-primary">
+                    Login
+                </button>
+               
+            </div>
+         
+        </form>
+    </div>
+</div>
+</div>
 <router-outlet></router-outlet>
