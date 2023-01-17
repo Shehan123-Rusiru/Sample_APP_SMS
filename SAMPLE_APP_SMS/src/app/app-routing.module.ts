@@ -7,8 +7,17 @@ import { RegisterComponent } from './internal-base/register/register.component';
 const routes: Routes = [
   { path: '', component: ExternalBaseComponent},
   { path: 'Login', component: ExternalBaseComponent },
-  { path: 'Home', component: InternalBaseComponent },
-  { path: 'Register', component: RegisterComponent },
+ 
+  
+  { 
+    path: 'Home', 
+    component: InternalBaseComponent ,
+  children :[
+     { path: 'Register', component: RegisterComponent }
+  ]
+ 
+},
+  
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
