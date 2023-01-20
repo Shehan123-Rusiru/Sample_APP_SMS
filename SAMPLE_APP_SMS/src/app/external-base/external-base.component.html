@@ -7,10 +7,10 @@
     <h4 class="card-header text-center" style="color: blue;">Student Management System</h4>
     <h3 class="card-header" style="color: blueviolet;">Login</h3>
     <div class="card-body">
-        <form >
+        <form [formGroup]="formData" (ngSubmit)="onClickSubmit(formData.value)">
             <div class="input">
                 <label for="username">Username</label>
-                <input type="text" formControlName="username" class="form-control" required/>
+                <input type="text" formControlName="username" class="form-control" required autofocus/>
               
             </div>
             <div class="input">
@@ -20,7 +20,7 @@
             </div>
         
             <div class="btn">
-                <button routerLink="../Home" class="btn btn-primary">
+                <button  type="submit" class="form-control"  class="btn btn-primary">
                     Login
                 </button>
                

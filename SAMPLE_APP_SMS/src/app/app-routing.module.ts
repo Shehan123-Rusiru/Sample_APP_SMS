@@ -6,6 +6,7 @@ import { RegisterComponent } from './internal-base/register/register.component';
 
 const routes: Routes = [
   { path: '', component: ExternalBaseComponent},
+  
   { path: 'Login', component: ExternalBaseComponent },
  
   
