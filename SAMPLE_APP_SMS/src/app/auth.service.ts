@@ -17,7 +17,7 @@ export class AuthService {
       this.isUserLoggedIn = username == 'admin' && password == 'admin'; //set true or false
       console.log(this.isUserLoggedIn);
       localStorage.setItem('isUserLoggedIn', this.isUserLoggedIn ? "true" : "false"); // set to loacl storage ture or false
-
+      sessionStorage.setItem("User Logged in", username );
       return of(this.isUserLoggedIn);
    // return of(this.isUserLoggedIn).pipe(   // from true or false values
       

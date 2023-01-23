@@ -7,9 +7,7 @@ import { AppComponent } from './app.component';
 import { ExternalBaseComponent } from './external-base/external-base.component';
 import { InternalBaseComponent } from './internal-base/internal-base.component';
 import { RegisterComponent } from './internal-base/register/register.component';
-
-
-
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -24,7 +22,7 @@ import { RegisterComponent } from './internal-base/register/register.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
