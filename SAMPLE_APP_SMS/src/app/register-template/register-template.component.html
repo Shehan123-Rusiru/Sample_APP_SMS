@@ -2,45 +2,69 @@
     <div class="card">
         <h4 class="card-header" style="color: chartreuse;">Register Template Driven</h4>
         <div class="card-body">
-            <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+            <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" novalidate>
 
                 <p>
                     <label for="firstname">First Name</label>
-                    <input type="text"  name="firstname" class="form-control" ngModel >
+                    <input type="text" name="firstname" class="form-control" #firstname="ngModel"
+                        [(ngModel)]="contact.firstname" required>
                 </p>
+
+                <div *ngIf="!firstname?.valid && (firstname?.dirty || firstname?.touched)">
+                    Invalid First Name
+                </div>
 
                 <p>
                     <label for="lastname">Last Name</label>
-                    <input type="text" name="lastname" class="form-control"  ngModel>
+                    <input type="text" name="lastname" class="form-control" #lastname="ngModel"
+                        [(ngModel)]="contact.lastname" required>
                 </p>
+
+                <div *ngIf="!lastname?.valid && (lastname?.dirty || lastname?.touched)" class="error">
+                    Invalid Last Name
+                </div>
 
                 <p>
                     <label for="email">Email </label>
-                    <input type="text" id="email" name="email" class="form-control"  ngModel>
+                    <input type="text" id="email" name="email" class="form-control" #email="ngModel"
+                        [(ngModel)]="contact.lastname" required>
                 </p>
+
+                <div *ngIf="!email?.valid && (email?.dirty || email?.touched)">
+                    Invalid Email Name
+                </div>
 
                 <p>
                     <label for="gender">Geneder</label>
-                    <input type="radio" value="male" name="gender"   ngModel> Male
-                    <input type="radio" value="female" name="gender"  ngModel> Female
+                    <input type="radio" value="male" name="gender" #gender="ngModel" [(ngModel)]="contact.gender"
+                        required> Male
+                    <input type="radio" value="female" name="gender" #gender="ngModel" [(ngModel)]="contact.gender"
+                        required> Female
                 </p>
+
+                <div *ngIf="!gender?.valid && (gender?.dirty || gender?.touched)" class="error">
+
+                    Gender is required
+
+                </div>
 
                 <p>
                     <label for="isMarried">Married</label>
-                    <input type="checkbox" name="isMarried"   ngModel>
+                    <input type="checkbox" name="isMarried" ngModel>
                 </p>
 
-                <select name="country" class="form-control"  ngModel>
+                <select name="country" class="form-control" ngModel>
                     <option [ngValue]="c.id" *ngFor="let c of countryList">
                         {{c.name}}
                     </option>
                 </select>
 
                 <div class="btn">
-                <p>
-                    <button type="submit" class="form-control btn btn-primary" >Submit</button>
-                </p>
-            </div>
+                    <p>
+                        <button type="submit" [disabled]="!contactForm.valid" class="form-control btn btn-primary">Submit</button>
+                    </p>
+                    Form Validity<p>{{contactForm.valid}} </p>
+                </div>
 
             </form>
         </div>

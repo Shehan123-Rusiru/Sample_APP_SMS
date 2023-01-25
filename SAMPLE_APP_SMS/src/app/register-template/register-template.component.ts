@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -7,8 +7,24 @@ import { Component } from '@angular/core';
   templateUrl: './register-template.component.html',
   styleUrls: ['./register-template.component.scss']
 })
-export class RegisterTemplateComponent {
 
+
+export class RegisterTemplateComponent implements OnInit  {
+
+  
+contact : any;
+
+  ngOnInit(){
+ 
+    this.contact = { 
+      firstname:"",
+      lastname:"",
+      gender:"male",
+      isToc:true,
+      email:"",
+    };
+ 
+  }
   onSubmit(contactForm: { value: any; }) {
     console.log(contactForm.value);
   }
@@ -19,8 +35,6 @@ export class RegisterTemplateComponent {
   ];
 }
 
-
-
 export class country {
   id: string;
   name: string;
@@ -28,9 +42,14 @@ export class country {
   constructor(id: string, name: string) {
     this.id = id;
     this.name = name;
+    
 
   }
+
+ 
+ 
 
 
 
 }
+
