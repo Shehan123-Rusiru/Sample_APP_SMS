@@ -1,39 +1,58 @@
-
-
 <div class="col-sm-6 mx-auto">
-<div class="card">
-    <h4 class="card-header" style="color: chartreuse;">Register</h4>
-    <div class="card-body">
-        <form >
-            <div class="input">
-                <label for="firstName">First Name</label>
-                <input type="text" formControlName="firstName" class="form-control" />
-               
-            </div>
-            <div class="input">
-                <label for="lastName">Last Name</label>
-                <input type="text" formControlName="lastName" class="form-control"  />
-               
-            </div>
-            <div class="input">
-                <label for="username">User Name</label>
-                <input type="text" formControlName="username" class="form-control"  />
-              
-            </div>
-            <div class="input">
-                <label for="password">Pass Word</label>
-                <input type="password" formControlName="password" class="form-control" />
-               
-            </div>
-            <div class="btn">
-                <button routerLink="/Login"  class="btn btn-primary">
-                   
-                    Register
-                </button>
-               
-            </div>
-        </form>
+    <div class="card">
+        <h4 class="card-header" style="color: chartreuse;">Register</h4>
+        <div class="card-body">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+                <div class="input">
+                    <label for="firstName">First Name</label>
+                    <input type="text" formControlName="firstName" id="firstName" name="firstName"
+                        class="form-control" />
+
+
+                </div>
+                <div *ngIf="!contactForm.controls.firstName?.valid && (contactForm.controls.firstName?.dirty
+                ||contactForm.controls.firstName?.touched)">
+                    First Name is not valid
+                </div>
+
+                <div class="input">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" formControlName="lastName" id="lastName" name="lastName" class="form-control" />
+
+                </div>
+                <div *ngIf="!contactForm.controls.lastName?.valid && (contactForm.controls.lastName?.dirty
+                ||contactForm.controls.lastName?.touched)">
+                    Last Name is not valid
+                </div>
+                <div class="input">
+                    <label for="username">User Name</label>
+                    <input type="text" formControlName="username" id="username" name="username" class="form-control" />
+
+                </div>
+                <div *ngIf="!contactForm.controls.username?.valid && (contactForm.controls.username?.dirty
+                ||contactForm.controls.username?.touched)">
+                    User Name is not valid
+                </div>
+                <div class="input">
+                    <label for="password">Pass Word</label>
+                    <input type="password" formControlName="password" id="password" name="password"
+                        class="form-control" />
+
+                </div>
+                <div *ngIf="!contactForm.controls.password?.valid && (contactForm.controls.password?.dirty
+                ||contactForm.controls.password?.touched)">
+                    Password is not valid
+                </div>
+                Form Validation <p>{{contactForm.valid}}</p>
+                <div class="btn">
+                    <button type="submit" [disabled]="!contactForm.valid" class="btn btn-primary">
+
+                        Register
+                    </button>
+
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 </div>
 <router-outlet></router-outlet>

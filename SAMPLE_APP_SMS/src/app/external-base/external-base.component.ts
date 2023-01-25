@@ -35,6 +35,7 @@ export class ExternalBaseComponent implements OnInit {
   onClickSubmit(data: any) {
     this.username = data.username;
     this.password = data.password;
+    
 // submit to service
     this.authService.Login(this.username, this.password)
        .subscribe( (data: string) => { // Get Data from service
