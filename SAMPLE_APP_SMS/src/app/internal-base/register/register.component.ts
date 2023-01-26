@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
+
 
   contactForm = new FormGroup({
     firstName: new FormControl('', [Validators.required]),
@@ -29,7 +30,18 @@ export class RegisterComponent {
     return this.contactForm.get('password');
   }
 
+  constructor (private RegisterS : AuthService ) {
+  
+  }
+  ngOnInit(): void {
+    
+  }
+  
   onSubmit() {
-    console.log(this.contactForm.value);
+    //console.log(this.contactForm.value);
+    this.RegisterS.AddTec(this.contactForm.value).subscribe(result=>{console.log( result);});
   }
 }
+
+ 
+

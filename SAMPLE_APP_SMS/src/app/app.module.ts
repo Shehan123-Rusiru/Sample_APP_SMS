@@ -9,6 +9,7 @@ import { InternalBaseComponent } from './internal-base/internal-base.component';
 import { RegisterComponent } from './internal-base/register/register.component';
 import { CookieService } from 'ngx-cookie-service';
 import { RegisterTemplateComponent } from './register-template/register-template.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { RegisterTemplateComponent } from './register-template/register-template
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule, // imported for forms
     ReactiveFormsModule
   ],

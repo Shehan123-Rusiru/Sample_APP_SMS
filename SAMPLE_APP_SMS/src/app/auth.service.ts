@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
@@ -7,6 +7,7 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
+  readonly APIUrl = 'https://localhost:7205/api';
 
   isUserLoggedIn: boolean = false;
 
@@ -28,7 +29,12 @@ export class AuthService {
    // } 
    }
 
-   constructor() { }
+   constructor(private http: HttpClient) { }
+ 
+   AddTec(data: any) {
+     console.log(data);
+     return this.http.post(this.APIUrl + '/RegisterUser', data);
 
+   }
 
 }
