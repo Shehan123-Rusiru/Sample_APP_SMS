@@ -37,4 +37,10 @@ export class AuthService {
 
    }
 
+   AddTec1(data1: any) {
+       console.log(data1);
+    return this.http.post(this.APIUrl + '/TRegisterUser', data1);
+
+  }
+
 }

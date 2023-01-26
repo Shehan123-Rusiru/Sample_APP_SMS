@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -12,7 +13,10 @@ import { NgForm } from '@angular/forms';
 export class RegisterTemplateComponent implements OnInit  {
 
   
+  constructor (private RegisterS : AuthService){}
+
 contact : any;
+
 
   ngOnInit(){
  
@@ -26,7 +30,9 @@ contact : any;
  
   }
   onSubmit(contactForm: { value: any; }) {
-    console.log(contactForm.value);
+    
+    this.RegisterS.AddTec1(contactForm.value).subscribe(result=>{console.log( result);});
+
   }
   countryList: country[] = [
     new country("1", "India"),

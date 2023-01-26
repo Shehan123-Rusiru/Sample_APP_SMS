@@ -24,7 +24,7 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public JsonResult Post(UserDetails em)
         {
-            string query = @"Insert Into dbo.RegisterUser values ('" + em.fName + "','" + em.lName + "','" + em.username + "','" + em.password + @"')";
+            string query = @"Insert Into dbo.RegisterUser values ('" + em.firstName + "','" + em.lastName + "','" + em.username + "','" + em.password + @"')";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("SampleAppCon");
             SqlDataReader myReader;
@@ -44,5 +44,6 @@ namespace WebApplication1.Controllers
             }
             return new JsonResult("Added Successfuly");
         }
+        
     }
 }
