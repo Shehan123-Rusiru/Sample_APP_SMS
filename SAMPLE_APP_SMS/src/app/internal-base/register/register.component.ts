@@ -39,7 +39,8 @@ export class RegisterComponent implements OnInit {
   
   onSubmit() {
     //console.log(this.contactForm.value);
-    this.RegisterS.AddTec(this.contactForm.value).subscribe(result=>{console.log( result);});
+    this.RegisterS.AddTec(this.contactForm.value).subscribe(result=>{console.log( result);
+      alert(result);});
   }
 }
 

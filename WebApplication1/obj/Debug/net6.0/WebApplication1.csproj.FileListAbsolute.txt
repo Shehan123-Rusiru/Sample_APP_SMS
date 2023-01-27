@@ -35,3 +35,14 @@ D:\Sample_APP_SMS\WebApplication1\obj\Debug\net6.0\refint\WebApplication1.dll
 D:\Sample_APP_SMS\WebApplication1\obj\Debug\net6.0\WebApplication1.pdb
 D:\Sample_APP_SMS\WebApplication1\obj\Debug\net6.0\WebApplication1.genruntimeconfig.cache
 D:\Sample_APP_SMS\WebApplication1\obj\Debug\net6.0\ref\WebApplication1.dll
+D:\Sample_APP_SMS\WebApplication1\bin\Debug\net6.0\DnsClient.dll
+D:\Sample_APP_SMS\WebApplication1\bin\Debug\net6.0\MongoDB.Bson.dll
+D:\Sample_APP_SMS\WebApplication1\bin\Debug\net6.0\MongoDB.Driver.dll
+D:\Sample_APP_SMS\WebApplication1\bin\Debug\net6.0\MongoDB.Driver.Core.dll
+D:\Sample_APP_SMS\WebApplication1\bin\Debug\net6.0\MongoDB.Libmongocrypt.dll
+D:\Sample_APP_SMS\WebApplication1\bin\Debug\net6.0\SharpCompress.dll
+D:\Sample_APP_SMS\WebApplication1\bin\Debug\net6.0\Snappier.dll
+D:\Sample_APP_SMS\WebApplication1\bin\Debug\net6.0\ZstdSharp.dll
+D:\Sample_APP_SMS\WebApplication1\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
+D:\Sample_APP_SMS\WebApplication1\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
+D:\Sample_APP_SMS\WebApplication1\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll

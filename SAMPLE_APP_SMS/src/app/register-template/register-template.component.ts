@@ -10,28 +10,29 @@ import { AuthService } from '../auth.service';
 })
 
 
-export class RegisterTemplateComponent implements OnInit  {
-
-  
-  constructor (private RegisterS : AuthService){}
-
-contact : any;
+export class RegisterTemplateComponent implements OnInit {
 
 
-  ngOnInit(){
- 
-    this.contact = { 
-      firstname:"",
-      lastname:"",
-      gender:"male",
-      isToc:true,
-      email:"",
+  constructor(private RegisterS: AuthService) { }
+
+  contact: any;
+
+
+  ngOnInit() {
+
+    this.contact = {
+      firstname: "",
+      lastname: "",
+      gender: "male",
+      isToc: true,
+      email: "",
     };
- 
+
   }
   onSubmit(contactForm: { value: any; }) {
-    
-    this.RegisterS.AddTec1(contactForm.value).subscribe(result=>{console.log( result);});
+
+    this.RegisterS.AddTec1(contactForm.value).subscribe(result => { console.log(result);
+    alert(result); });
 
   }
   countryList: country[] = [
@@ -48,12 +49,12 @@ export class country {
   constructor(id: string, name: string) {
     this.id = id;
     this.name = name;
-    
+
 
   }
 
- 
- 
+
+
 
 
 
