@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
+
 import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  readonly APIUrl = 'https://localhost:7205/api';
+  //readonly APIUrl = 'https://localhost:7205/api';
 
   isUserLoggedIn: boolean = false;
 
@@ -33,13 +34,13 @@ export class AuthService {
  
    AddTec(data: any) {
      console.log(data);
-     return this.http.post(this.APIUrl + '/RegisterUser', data);
+     return this.http.post('/api/RegisterUser', data);
 
    }
 
    AddTec1(data1: any) {
        console.log(data1);
-    return this.http.post(this.APIUrl + '/TRegisterUser', data1);
+    return this.http.post('/api/TRegisterUser', data1);
 
   }
 
