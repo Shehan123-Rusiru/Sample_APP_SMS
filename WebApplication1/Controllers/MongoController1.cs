@@ -17,7 +17,7 @@ namespace WebApplication1.Controllers
         {
             await _registerService.CreateAsync(newregisterUser);
 
-            return NoContent();
+           return new JsonResult("Record Added Successfuly To MongoDB");
         }
 
     }

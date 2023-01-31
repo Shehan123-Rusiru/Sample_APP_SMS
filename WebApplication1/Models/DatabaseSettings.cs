@@ -8,5 +8,7 @@
         public string DatabaseName { get; set; } = null!;
 
         public string RegisterCollectionName { get; set; } = null!;
+
+       public string RegisterCollectionName1 { get; set; } = null!;
     }
 }

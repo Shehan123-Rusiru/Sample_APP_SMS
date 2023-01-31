@@ -44,4 +44,15 @@ export class AuthService {
 
   }
 
+  Add_to_Mongo(data2: any) {
+    console.log(data2);
+ return this.http.post('/api/MongoController1', data2);
+
+}
+Add_to_Mongo1(data3: any) {
+  console.log(data3);
+return this.http.post('/api/MongoController2', data3);
+
+}
+
 }

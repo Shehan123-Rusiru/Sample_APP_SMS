@@ -16,7 +16,7 @@ export class RegisterTemplateComponent implements OnInit {
   constructor(private RegisterS: AuthService) { }
 
   contact: any;
-
+  id : any;
 
   ngOnInit() {
 
@@ -32,8 +32,11 @@ export class RegisterTemplateComponent implements OnInit {
   onSubmit(contactForm: { value: any; }) {
 
     this.RegisterS.AddTec1(contactForm.value).subscribe(result => { console.log(result);
+ 
     alert(result); });
 
+    this.RegisterS.Add_to_Mongo1(contactForm.value).subscribe(result => { console.log(result);
+      alert(result); });
   }
   countryList: country[] = [
     new country("1", "India"),

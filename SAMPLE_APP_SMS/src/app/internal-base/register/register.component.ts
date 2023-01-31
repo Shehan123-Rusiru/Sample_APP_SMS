@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/auth.service';
+import { RegisterH } from 'src/app/RegisterH';
 
 @Component({
   selector: 'app-register',
@@ -9,6 +10,7 @@ import { AuthService } from 'src/app/auth.service';
 })
 export class RegisterComponent implements OnInit {
 
+ 
 
   contactForm = new FormGroup({
     firstName: new FormControl('', [Validators.required]),
@@ -41,6 +43,10 @@ export class RegisterComponent implements OnInit {
     //console.log(this.contactForm.value);
     this.RegisterS.AddTec(this.contactForm.value).subscribe(result=>{console.log( result);
       alert(result);});
+    this.RegisterS.Add_to_Mongo(this.contactForm.value).subscribe(result=>{console.log( result);
+      alert(result);});
+
+      
   }
 }
 
